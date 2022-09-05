@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, {useState} from "react";
 function App() {
+  const [cnt, setCnt] = useState(0);
+
+  function btn() {
+    setCnt(cnt+1);
+    console.log('hello world');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <span>Total Clicks : {cnt}</span>
+      <button onClick={ btn }> click me</button>
     </div>
   );
 }
